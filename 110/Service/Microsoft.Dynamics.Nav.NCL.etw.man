@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events">
+  <instrumentation xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events">
+    <events xmlns="http://schemas.microsoft.com/win/2004/08/events">
+      <provider name="Microsoft-DynamicsNAV-Server" guid="{85423fd1-c021-5a63-f214-c4819f8809f3}" symbol="MicrosoftDynamicsNAVServer" messageFileName="C:\Program Files\Microsoft Dynamics NAV\110\Service\Microsoft.Dynamics.Nav.Ncl.etw.dll" resourceFileName="C:\Program Files\Microsoft Dynamics NAV\110\Service\Microsoft.Dynamics.Nav.Ncl.etw.dll">
+        <channels>
+          <channel chid="Debug" name="Microsoft-DynamicsNAV-Server/Debug" value="19" type="Debug" enabled="false">
+            <publishing>
+              <bufferSize>64</bufferSize>
+              <maxBuffers>64</maxBuffers>
+              <latency>1</latency>
+            </publishing>
+          </channel>
+          <channel chid="Operational" name="Microsoft-DynamicsNAV-Server/Operational" value="17" type="Operational" enabled="true"/>
+          <channel chid="Admin" name="Microsoft-DynamicsNAV-Server/Admin" value="16" type="Admin" enabled="true"/>
+        </channels>
+        <tasks>
+          <task name="ExecuteScalar" message="$(string.task_ExecuteScalar)" value="1"/>
+          <task name="ExecuteNonQuery" message="$(string.task_ExecuteNonQuery)" value="2"/>
+          <task name="ExecuteReader" message="$(string.task_ExecuteReader)" value="3"/>
+          <task name="ReadNextResult" message="$(string.task_ReadNextResult)" value="4"/>
+          <task name="ReadNextRow" message="$(string.task_ReadNextRow)" value="5"/>
+          <task name="BeginTransaction" message="$(string.task_BeginTransaction)" value="6"/>
+          <task name="Prepare" message="$(string.task_Prepare)" value="7"/>
+          <task name="OpenConnection" message="$(string.task_OpenConnection)" value="8"/>
+          <task name="Commit" message="$(string.task_Commit)" value="9"/>
+          <task name="Rollback" message="$(string.task_Rollback)" value="10"/>
+          <task name="CloseConnection" message="$(string.task_CloseConnection)" value="11"/>
+          <task name="Message" message="$(string.task_Message)" value="12"/>
+          <task name="ExceptionThrown" message="$(string.task_ExceptionThrown)" value="13"/>
+          <task name="RunQuery" message="$(string.task_RunQuery)" value="14"/>
+          <task name="RunReport" message="$(string.task_RunReport)" value="15"/>
+          <task name="GetPage" message="$(string.task_GetPage)" value="16"/>
+          <task name="InvokeCodeUnit" message="$(string.task_InvokeCodeUnit)" value="17"/>
+          <task name="InvokeFormApplicationMethod" message="$(string.task_InvokeFormApplicationMethod)" value="18"/>
+          <task name="RunXmlPort" message="$(string.task_RunXmlPort)" value="19"/>
+          <task name="ExecuteALFunction" message="$(string.task_ExecuteALFunction)" value="20"/>
+          <task name="OpenSession" message="$(string.task_OpenSession)" value="21"/>
+          <task name="CloseSession" message="$(string.task_CloseSession)" value="22"/>
+          <task name="CreateServiceSession" message="$(string.task_CreateServiceSession)" value="23"/>
+          <task name="EndServiceSession" message="$(string.task_EndServiceSession)" value="24"/>
+          <task name="CrmRetrieveMultiple" message="$(string.task_CrmRetrieveMultiple)" value="25"/>
+          <task name="CrmRetrieve" message="$(string.task_CrmRetrieve)" value="26"/>
+          <task name="CrmCreate" message="$(string.task_CrmCreate)" value="27"/>
+          <task name="CrmUpdate" message="$(string.task_CrmUpdate)" value="28"/>
+          <task name="CrmDelete" message="$(string.task_CrmDelete)" value="29"/>
+          <task name="CrmAssociate" message="$(string.task_CrmAssociate)" value="30"/>
+          <task name="CrmDisassociate" message="$(string.task_CrmDisassociate)" value="31"/>
+          <task name="CrmSetState" message="$(string.task_CrmSetState)" value="32"/>
+          <task name="TelemetryData" message="$(string.task_TelemetryData)" value="33"/>
+          <task name="WritePermissionUncheckedEvent" message="$(string.task_WritePermissionUncheckedEvent)" value="64731"/>
+          <task name="WritePermissionCheckUnsuccessfulEvent" message="$(string.task_WritePermissionCheckUnsuccessfulEvent)" value="64732"/>
+          <task name="WritePermissionCheckSuccessfulEvent" message="$(string.task_WritePermissionCheckSuccessfulEvent)" value="64733"/>
+          <task name="WritePermissionCheckStartEvent" message="$(string.task_WritePermissionCheckStartEvent)" value="64734"/>
+        </tasks>
+        <opcodes></opcodes>
+        <keywords>
+          <keyword name="EventViewer" message="$(string.keyword_EventViewer)" mask="0x1"/>
+          <keyword name="SqlTracing" message="$(string.keyword_SqlTracing)" mask="0x2"/>
+          <keyword name="ServiceCall" message="$(string.keyword_ServiceCall)" mask="0x4"/>
+          <keyword name="ALFunctionCallTracing" message="$(string.keyword_ALFunctionCallTracing)" mask="0x8"/>
+          <keyword name="CrmTracing" message="$(string.keyword_CrmTracing)" mask="0x10"/>
+          <keyword name="TelemetryTracing" message="$(string.keyword_TelemetryTracing)" mask="0x20"/>
+          <keyword name="LicenseTelemetry" message="$(string.keyword_LicenseTelemetry)" mask="0x40"/>
+          <keyword name="Session3" message="$(string.keyword_Session3)" mask="0x100000000000"/>
+          <keyword name="Session2" message="$(string.keyword_Session2)" mask="0x200000000000"/>
+          <keyword name="Session1" message="$(string.keyword_Session1)" mask="0x400000000000"/>
+          <keyword name="Session0" message="$(string.keyword_Session0)" mask="0x800000000000"/>
+        </keywords>
+        <events>
+          <event value="1" version="1" level="win:Informational" symbol="WriteSqlExecuteScalarStartEvent" message="$(string.event_WriteSqlExecuteScalarStartEvent)" keywords="SqlTracing" opcode="win:Start" task="ExecuteScalar" channel="Debug" template="WriteSqlExecuteScalarStartEventArgs"/>
+          <event value="2" version="1" level="win:Informational" symbol="WriteSqlExecuteScalarStopEvent" message="$(string.event_WriteSqlExecuteScalarStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="ExecuteScalar" channel="Debug" template="WriteSqlExecuteScalarStopEventArgs"/>
+          <event value="3" version="1" level="win:Informational" symbol="WriteSqlExecuteNonQueryStartEvent" message="$(string.event_WriteSqlExecuteNonQueryStartEvent)" keywords="SqlTracing" opcode="win:Start" task="ExecuteNonQuery" channel="Debug" template="WriteSqlExecuteNonQueryStartEventArgs"/>
+          <event value="4" version="1" level="win:Informational" symbol="WriteSqlExecuteNonQueryStopEvent" message="$(string.event_WriteSqlExecuteNonQueryStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="ExecuteNonQuery" channel="Debug" template="WriteSqlExecuteNonQueryStopEventArgs"/>
+          <event value="5" version="1" level="win:Informational" symbol="WriteSqlExecuteReaderStartEvent" message="$(string.event_WriteSqlExecuteReaderStartEvent)" keywords="SqlTracing" opcode="win:Start" task="ExecuteReader" channel="Debug" template="WriteSqlExecuteReaderStartEventArgs"/>
+          <event value="6" version="1" level="win:Informational" symbol="WriteSqlExecuteReaderStopEvent" message="$(string.event_WriteSqlExecuteReaderStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="ExecuteReader" channel="Debug" template="WriteSqlExecuteReaderStopEventArgs"/>
+          <event value="7" version="1" level="win:Informational" symbol="WriteSqlReadNextResultStartEvent" message="$(string.event_WriteSqlReadNextResultStartEvent)" keywords="SqlTracing" opcode="win:Start" task="ReadNextResult" channel="Debug" template="WriteSqlReadNextResultStartEventArgs"/>
+          <event value="8" version="1" level="win:Informational" symbol="WriteSqlReadNextResultStopEvent" message="$(string.event_WriteSqlReadNextResultStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="ReadNextResult" channel="Debug" template="WriteSqlReadNextResultStopEventArgs"/>
+          <event value="9" version="1" level="win:Informational" symbol="WriteSqlReadNextRowStartEvent" message="$(string.event_WriteSqlReadNextRowStartEvent)" keywords="SqlTracing" opcode="win:Start" task="ReadNextRow" channel="Debug" template="WriteSqlReadNextRowStartEventArgs"/>
+          <event value="10" version="1" level="win:Informational" symbol="WriteSqlReadNextRowStopEvent" message="$(string.event_WriteSqlReadNextRowStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="ReadNextRow" channel="Debug" template="WriteSqlReadNextRowStopEventArgs"/>
+          <event value="11" version="1" level="win:Informational" symbol="WriteSqlBeginTransactionStartEvent" message="$(string.event_WriteSqlBeginTransactionStartEvent)" keywords="SqlTracing" opcode="win:Start" task="BeginTransaction" channel="Debug" template="WriteSqlBeginTransactionStartEventArgs"/>
+          <event value="12" version="1" level="win:Informational" symbol="WriteSqlBeginTransactionStopEvent" message="$(string.event_WriteSqlBeginTransactionStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="BeginTransaction" channel="Debug" template="WriteSqlBeginTransactionStopEventArgs"/>
+          <event value="13" version="1" level="win:Informational" symbol="WriteSqlPrepareStartEvent" message="$(string.event_WriteSqlPrepareStartEvent)" keywords="SqlTracing" opcode="win:Start" task="Prepare" channel="Debug" template="WriteSqlPrepareStartEventArgs"/>
+          <event value="14" version="1" level="win:Informational" symbol="WriteSqlPrepareStopEvent" message="$(string.event_WriteSqlPrepareStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="Prepare" channel="Debug" template="WriteSqlPrepareStopEventArgs"/>
+          <event value="15" version="1" level="win:Informational" symbol="WriteSqlOpenConnectionStartEvent" message="$(string.event_WriteSqlOpenConnectionStartEvent)" keywords="SqlTracing" opcode="win:Start" task="OpenConnection" channel="Debug" template="WriteSqlOpenConnectionStartEventArgs"/>
+          <event value="16" version="1" level="win:Informational" symbol="WriteSqlOpenConnectionStopEvent" message="$(string.event_WriteSqlOpenConnectionStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="OpenConnection" channel="Debug" template="WriteSqlOpenConnectionStopEventArgs"/>
+          <event value="17" version="1" level="win:Informational" symbol="WriteSqlCommitStartEvent" message="$(string.event_WriteSqlCommitStartEvent)" keywords="SqlTracing" opcode="win:Start" task="Commit" channel="Debug" template="WriteSqlCommitStartEventArgs"/>
+          <event value="18" version="1" level="win:Informational" symbol="WriteSqlCommitStopEvent" message="$(string.event_WriteSqlCommitStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="Commit" channel="Debug" template="WriteSqlCommitStopEventArgs"/>
+          <event value="19" version="1" level="win:Informational" symbol="WriteSqlRollbackStartEvent" message="$(string.event_WriteSqlRollbackStartEvent)" keywords="SqlTracing" opcode="win:Start" task="Rollback" channel="Debug" template="WriteSqlRollbackStartEventArgs"/>
+          <event value="20" version="1" level="win:Informational" symbol="WriteSqlRollbackStopEvent" message="$(string.event_WriteSqlRollbackStopEvent)" keywords="SqlTracing" opcode="win:Stop" task="Rollback" channel="Debug" template="WriteSqlRollbackStopEventArgs"/>
+          <event value="112" version="1" level="win:Error" symbol="WriteScomFatalSqlErrorEvent" message="$(string.event_WriteScomFatalSqlErrorEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteScomFatalSqlErrorEventArgs"/>
+          <event value="113" version="1" level="win:Informational" symbol="WriteScomSqlConnectionEstablishedEvent" message="$(string.event_WriteScomSqlConnectionEstablishedEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteScomSqlConnectionEstablishedEventArgs"/>
+          <event value="200" version="1" level="win:Error" symbol="WriteSubsystemErrorMessageEvent" message="$(string.event_WriteSubsystemErrorMessageEvent)" keywords="EventViewer" task="Message" channel="Admin" template="WriteSubsystemErrorMessageEventArgs"/>
+          <event value="201" version="1" level="win:Informational" symbol="WriteSubsystemInfoMessageEvent" message="$(string.event_WriteSubsystemInfoMessageEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteSubsystemInfoMessageEventArgs"/>
+          <event value="202" version="1" level="win:Warning" symbol="WriteSubsystemWarningMessageEvent" message="$(string.event_WriteSubsystemWarningMessageEvent)" keywords="EventViewer" task="Message" channel="Admin" template="WriteSubsystemWarningMessageEventArgs"/>
+          <event value="205" version="1" level="win:Informational" symbol="WriteODataConnectedEvent" message="$(string.event_WriteODataConnectedEvent)" keywords="EventViewer" opcode="win:Start" task="OpenConnection" channel="Operational" template="WriteODataConnectedEventArgs"/>
+          <event value="206" version="1" level="win:Informational" symbol="WriteODataConnectionClosedEvent" message="$(string.event_WriteODataConnectionClosedEvent)" keywords="EventViewer" opcode="win:Stop" task="CloseConnection" channel="Operational" template="WriteODataConnectionClosedEventArgs"/>
+          <event value="207" version="1" level="win:Informational" symbol="WriteWebServiceConnectedEvent" message="$(string.event_WriteWebServiceConnectedEvent)" keywords="EventViewer" opcode="win:Start" task="OpenConnection" channel="Operational" template="WriteWebServiceConnectedEventArgs"/>
+          <event value="208" version="1" level="win:Informational" symbol="WriteWebServiceConnectionClosedEvent" message="$(string.event_WriteWebServiceConnectionClosedEvent)" keywords="EventViewer" opcode="win:Stop" task="CloseConnection" channel="Operational" template="WriteWebServiceConnectionClosedEventArgs"/>
+          <event value="209" version="1" level="win:Informational" symbol="WriteRtcConnectedEvent" message="$(string.event_WriteRtcConnectedEvent)" keywords="EventViewer" opcode="win:Start" task="OpenConnection" channel="Debug" template="WriteRtcConnectedEventArgs"/>
+          <event value="210" version="1" level="win:Informational" symbol="WriteRtcConnectionClosedEvent" message="$(string.event_WriteRtcConnectionClosedEvent)" keywords="EventViewer" opcode="win:Stop" task="CloseConnection" channel="Debug" template="WriteRtcConnectionClosedEventArgs"/>
+          <event value="211" version="1" level="win:Informational" symbol="WriteALInfoMessageEvent" message="$(string.event_WriteALInfoMessageEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteALInfoMessageEventArgs"/>
+          <event value="214" version="1" level="win:Informational" symbol="WriteAdminServiceConnectedEvent" message="$(string.event_WriteAdminServiceConnectedEvent)" keywords="EventViewer" opcode="win:Start" task="OpenConnection" channel="Operational" template="WriteAdminServiceConnectedEventArgs"/>
+          <event value="215" version="1" level="win:Informational" symbol="WriteAdminServiceConnectionClosedEvent" message="$(string.event_WriteAdminServiceConnectionClosedEvent)" keywords="EventViewer" opcode="win:Stop" task="CloseConnection" channel="Operational" template="WriteAdminServiceConnectionClosedEventArgs"/>
+          <event value="216" version="1" level="win:Error" symbol="WriteExceptionErrorMessageEvent" message="$(string.event_WriteExceptionErrorMessageEvent)" keywords="EventViewer" task="ExceptionThrown" channel="Admin" template="WriteExceptionErrorMessageEventArgs"/>
+          <event value="217" version="1" level="win:Informational" symbol="WriteExceptionInfoMessageEvent" message="$(string.event_WriteExceptionInfoMessageEvent)" keywords="EventViewer" task="ExceptionThrown" channel="Operational" template="WriteExceptionInfoMessageEventArgs"/>
+          <event value="218" version="1" level="win:Warning" symbol="WriteExceptionWarningMessageEvent" message="$(string.event_WriteExceptionWarningMessageEvent)" keywords="EventViewer" task="ExceptionThrown" channel="Admin" template="WriteExceptionWarningMessageEventArgs"/>
+          <event value="219" version="1" level="win:Informational" symbol="WriteNasStartingEvent" message="$(string.event_WriteNasStartingEvent)" keywords="EventViewer" opcode="win:Start" task="OpenConnection" channel="Operational" template="WriteNasStartingEventArgs"/>
+          <event value="220" version="1" level="win:Informational" symbol="WriteNasCompletedEvent" message="$(string.event_WriteNasCompletedEvent)" keywords="EventViewer" opcode="win:Stop" task="CloseConnection" channel="Operational" template="WriteNasCompletedEventArgs"/>
+          <event value="221" version="1" level="win:Error" symbol="WriteNasFailedEvent" message="$(string.event_WriteNasFailedEvent)" keywords="EventViewer" opcode="win:Stop" task="CloseConnection" channel="Admin" template="WriteNasFailedEventArgs"/>
+          <event value="222" version="1" level="win:Error" symbol="WriteNasPermanentlyFailedEvent" message="$(string.event_WriteNasPermanentlyFailedEvent)" keywords="EventViewer" opcode="win:Stop" task="Message" channel="Admin" template="WriteNasPermanentlyFailedEventArgs"/>
+          <event value="223" version="1" level="win:Informational" symbol="WriteNavServerInitializingEvent" message="$(string.event_WriteNavServerInitializingEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteNavServerInitializingEventArgs"/>
+          <event value="224" version="1" level="win:Informational" symbol="WriteNavServerReadyEvent" message="$(string.event_WriteNavServerReadyEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteNavServerReadyEventArgs"/>
+          <event value="225" version="1" level="win:Informational" symbol="WriteNavServerShuttingDownEvent" message="$(string.event_WriteNavServerShuttingDownEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteNavServerShuttingDownEventArgs"/>
+          <event value="226" version="1" level="win:Informational" symbol="WriteApplicationMountedEvent" message="$(string.event_WriteApplicationMountedEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteApplicationMountedEventArgs"/>
+          <event value="227" version="1" level="win:Error" symbol="WriteApplicationMountFailedEvent" message="$(string.event_WriteApplicationMountFailedEvent)" keywords="EventViewer" task="Message" channel="Admin" template="WriteApplicationMountFailedEventArgs"/>
+          <event value="228" version="1" level="win:Informational" symbol="WriteTenantMountedEvent" message="$(string.event_WriteTenantMountedEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteTenantMountedEventArgs"/>
+          <event value="229" version="1" level="win:Error" symbol="WriteTenantMountFailedEvent" message="$(string.event_WriteTenantMountFailedEvent)" keywords="EventViewer" task="Message" channel="Admin" template="WriteTenantMountFailedEventArgs"/>
+          <event value="230" version="1" level="win:Informational" symbol="WriteTenantDismountedEvent" message="$(string.event_WriteTenantDismountedEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteTenantDismountedEventArgs"/>
+          <event value="231" version="1" level="win:Warning" symbol="WriteAuthenticationSubsystemFailedEvent" message="$(string.event_WriteAuthenticationSubsystemFailedEvent)" keywords="EventViewer" task="Message" channel="Admin" template="WriteAuthenticationSubsystemFailedEventArgs"/>
+          <event value="232" version="1" level="win:Informational" symbol="WriteAuthenticationSubsystemInfoMessage" message="$(string.event_WriteAuthenticationSubsystemInfoMessage)" keywords="EventViewer" task="Message" channel="Operational" template="WriteAuthenticationSubsystemInfoMessageArgs"/>
+          <event value="233" version="1" level="win:Informational" symbol="LimitedUserOptionalTablePermissionErrorInfoMessage" message="$(string.event_LimitedUserOptionalTablePermissionErrorInfoMessage)" keywords="EventViewer" task="Message" channel="Admin" template="LimitedUserOptionalTablePermissionErrorInfoMessageArgs"/>
+          <event value="234" version="1" level="win:Informational" symbol="WriteTenantConfigLoadedEvent" message="$(string.event_WriteTenantConfigLoadedEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteTenantConfigLoadedEventArgs"/>
+          <event value="300" version="1" level="win:Informational" symbol="WriteRunQueryStartEvent" message="$(string.event_WriteRunQueryStartEvent)" keywords="ServiceCall" opcode="win:Start" task="RunQuery" channel="Debug" template="WriteRunQueryStartEventArgs"/>
+          <event value="301" version="1" level="win:Informational" symbol="WriteRunQueryStopEvent" message="$(string.event_WriteRunQueryStopEvent)" keywords="ServiceCall" opcode="win:Stop" task="RunQuery" channel="Debug" template="WriteRunQueryStopEventArgs"/>
+          <event value="302" version="1" level="win:Informational" symbol="WriteRunReportStartEvent" message="$(string.event_WriteRunReportStartEvent)" keywords="ServiceCall" opcode="win:Start" task="RunReport" channel="Debug" template="WriteRunReportStartEventArgs"/>
+          <event value="303" version="1" level="win:Informational" symbol="WriteRunReportStopEvent" message="$(string.event_WriteRunReportStopEvent)" keywords="ServiceCall" opcode="win:Stop" task="RunReport" channel="Debug" template="WriteRunReportStopEventArgs"/>
+          <event value="304" version="1" level="win:Informational" symbol="WriteGetPageStartEvent" message="$(string.event_WriteGetPageStartEvent)" keywords="ServiceCall" opcode="win:Start" task="GetPage" channel="Debug" template="WriteGetPageStartEventArgs"/>
+          <event value="305" version="1" level="win:Informational" symbol="WriteGetPageStopEvent" message="$(string.event_WriteGetPageStopEvent)" keywords="ServiceCall" opcode="win:Stop" task="GetPage" channel="Debug" template="WriteGetPageStopEventArgs"/>
+          <event value="306" version="1" level="win:Informational" symbol="WriteInvokeCodeUnitStartEvent" message="$(string.event_WriteInvokeCodeUnitStartEvent)" keywords="ServiceCall" opcode="win:Start" task="InvokeCodeUnit" channel="Debug" template="WriteInvokeCodeUnitStartEventArgs"/>
+          <event value="307" version="1" level="win:Informational" symbol="WriteInvokeCodeUnitStopEvent" message="$(string.event_WriteInvokeCodeUnitStopEvent)" keywords="ServiceCall" opcode="win:Stop" task="InvokeCodeUnit" channel="Debug" template="WriteInvokeCodeUnitStopEventArgs"/>
+          <event value="308" version="1" level="win:Informational" symbol="WriteInvokeFormApplicationMethodStartEvent" message="$(string.event_WriteInvokeFormApplicationMethodStartEvent)" keywords="ServiceCall" opcode="win:Start" task="InvokeFormApplicationMethod" channel="Debug" template="WriteInvokeFormApplicationMethodStartEventArgs"/>
+          <event value="309" version="1" level="win:Informational" symbol="WriteInvokeFormApplicationMethodStopEvent" message="$(string.event_WriteInvokeFormApplicationMethodStopEvent)" keywords="ServiceCall" opcode="win:Stop" task="InvokeFormApplicationMethod" channel="Debug" template="WriteInvokeFormApplicationMethodStopEventArgs"/>
+          <event value="310" version="1" level="win:Informational" symbol="WriteRunXmlPortStartEvent" message="$(string.event_WriteRunXmlPortStartEvent)" keywords="ServiceCall" opcode="win:Start" task="RunXmlPort" channel="Debug" template="WriteRunXmlPortStartEventArgs"/>
+          <event value="311" version="1" level="win:Informational" symbol="WriteRunXmlPortStopEvent" message="$(string.event_WriteRunXmlPortStopEvent)" keywords="ServiceCall" opcode="win:Stop" task="RunXmlPort" channel="Debug" template="WriteRunXmlPortStopEventArgs"/>
+          <event value="312" version="1" level="win:Informational" symbol="WriteCreateServiceSessionStartEvent" message="$(string.event_WriteCreateServiceSessionStartEvent)" keywords="ServiceCall" opcode="win:Start" task="CreateServiceSession" channel="Debug" template="WriteCreateServiceSessionStartEventArgs"/>
+          <event value="313" version="1" level="win:Informational" symbol="WriteCreateServiceSessionStopEvent" message="$(string.event_WriteCreateServiceSessionStopEvent)" keywords="ServiceCall" opcode="win:Stop" task="CreateServiceSession" channel="Debug" template="WriteCreateServiceSessionStopEventArgs"/>
+          <event value="314" version="1" level="win:Informational" symbol="WriteEndServiceSessionStartEvent" message="$(string.event_WriteEndServiceSessionStartEvent)" keywords="ServiceCall" opcode="win:Start" task="EndServiceSession" channel="Debug" template="WriteEndServiceSessionStartEventArgs"/>
+          <event value="315" version="1" level="win:Informational" symbol="WriteEndServiceSessionStopEvent" message="$(string.event_WriteEndServiceSessionStopEvent)" keywords="ServiceCall" opcode="win:Stop" task="EndServiceSession" channel="Debug" template="WriteEndServiceSessionStopEventArgs"/>
+          <event value="400" version="2" level="win:Informational" symbol="WriteALFunctionStartEvent" message="$(string.event_WriteALFunctionStartEvent)" keywords="ALFunctionCallTracing" opcode="win:Start" task="ExecuteALFunction" channel="Debug" template="WriteALFunctionStartEventArgs"/>
+          <event value="401" version="2" level="win:Informational" symbol="WriteALFunctionStopEvent" message="$(string.event_WriteALFunctionStopEvent)" keywords="ALFunctionCallTracing" opcode="win:Stop" task="ExecuteALFunction" channel="Debug" template="WriteALFunctionStopEventArgs"/>
+          <event value="402" version="2" level="win:Error" symbol="WriteALFunctionFailedEvent" message="$(string.event_WriteALFunctionFailedEvent)" keywords="ALFunctionCallTracing" task="ExecuteALFunction" channel="Debug" template="WriteALFunctionFailedEventArgs"/>
+          <event value="403" version="2" level="win:Informational" symbol="WriteALFunctionStatementEvent" message="$(string.event_WriteALFunctionStatementEvent)" keywords="ALFunctionCallTracing" task="ExecuteALFunction" channel="Debug" template="WriteALFunctionStatementEventArgs"/>
+          <event value="500" version="1" level="win:Informational" symbol="WriteSessionOpenedEvent" message="$(string.event_WriteSessionOpenedEvent)" keywords="ServiceCall" task="OpenSession" channel="Debug" template="WriteSessionOpenedEventArgs"/>
+          <event value="501" version="1" level="win:Informational" symbol="WriteSessionClosedEvent" message="$(string.event_WriteSessionClosedEvent)" keywords="ServiceCall" task="CloseSession" channel="Debug" template="WriteSessionClosedEventArgs"/>
+          <event value="800" version="0" level="win:Informational" symbol="WritePermissionCheckStartEvent" message="$(string.event_WritePermissionCheckStartEvent)" keywords="LicenseTelemetry" task="WritePermissionCheckStartEvent" channel="Debug" template="WritePermissionCheckStartEventArgs"/>
+          <event value="801" version="0" level="win:Informational" symbol="WritePermissionCheckSuccessfulEvent" message="$(string.event_WritePermissionCheckSuccessfulEvent)" keywords="LicenseTelemetry" task="WritePermissionCheckSuccessfulEvent" channel="Debug" template="WritePermissionCheckSuccessfulEventArgs"/>
+          <event value="802" version="0" level="win:Informational" symbol="WritePermissionCheckUnsuccessfulEvent" message="$(string.event_WritePermissionCheckUnsuccessfulEvent)" keywords="LicenseTelemetry" task="WritePermissionCheckUnsuccessfulEvent" channel="Debug" template="WritePermissionCheckUnsuccessfulEventArgs"/>
+          <event value="803" version="0" level="win:Informational" symbol="WritePermissionUncheckedEvent" message="$(string.event_WritePermissionUncheckedEvent)" keywords="LicenseTelemetry" task="WritePermissionUncheckedEvent" channel="Debug" template="WritePermissionUncheckedEventArgs"/>
+          <event value="1000" version="1" level="win:Error" symbol="WriteCertificateMonitorPermanentlyFailedEvent" message="$(string.event_WriteCertificateMonitorPermanentlyFailedEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteCertificateMonitorPermanentlyFailedEventArgs"/>
+          <event value="1001" version="1" level="win:Informational" symbol="WriteCertificateReplacedInformationEvent" message="$(string.event_WriteCertificateReplacedInformationEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteCertificateReplacedInformationEventArgs"/>
+          <event value="1002" version="1" level="win:Error" symbol="WriteCertificateExpiredErrorEvent" message="$(string.event_WriteCertificateExpiredErrorEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteCertificateExpiredErrorEventArgs"/>
+          <event value="1003" version="1" level="win:Warning" symbol="WriteCertificateCloseToExpirationWarningEvent" message="$(string.event_WriteCertificateCloseToExpirationWarningEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteCertificateCloseToExpirationWarningEventArgs"/>
+          <event value="1006" version="1" level="win:Informational" symbol="WriteCertificateNewInformationEvent" message="$(string.event_WriteCertificateNewInformationEvent)" keywords="EventViewer" task="Message" channel="Operational" template="WriteCertificateNewInformationEventArgs"/>
+        </events>
+        <templates>
+          <template tid="WriteCertificateNewInformationEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteCertificateExpiredErrorEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteCertificateCloseToExpirationWarningEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WritePermissionCheckStartEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="objectType" inType="win:Int32"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="permissions" inType="win:Int32"/>
+            <data name="callingObjectType" inType="win:Int32"/>
+            <data name="callingObjectId" inType="win:Int32"/>
+          </template>
+          <template tid="WritePermissionCheckSuccessfulEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="objectType" inType="win:Int32"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="permissions" inType="win:Int32"/>
+            <data name="callingObjectType" inType="win:Int32"/>
+            <data name="callingObjectId" inType="win:Int32"/>
+            <data name="indirectPermissionFromCaller" inType="win:Int32"/>
+          </template>
+          <template tid="WritePermissionCheckUnsuccessfulEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="objectType" inType="win:Int32"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="permissions" inType="win:Int32"/>
+            <data name="callingObjectType" inType="win:Int32"/>
+            <data name="callingObjectId" inType="win:Int32"/>
+            <data name="indirectPermissionFromCaller" inType="win:Int32"/>
+          </template>
+          <template tid="WritePermissionUncheckedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="objectType" inType="win:Int32"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="permissions" inType="win:Int32"/>
+            <data name="callingObjectType" inType="win:Int32"/>
+            <data name="callingObjectId" inType="win:Int32"/>
+          </template>
+          <template tid="WriteALFunctionStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectType" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="functionName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="alternateTenantId" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteALFunctionStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectType" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="functionName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="alternateTenantId" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteALFunctionStatementEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectType" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="functionName" inType="win:UnicodeString"/>
+            <data name="lineNumber" inType="win:Int32"/>
+            <data name="statement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="alternateTenantId" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteALFunctionFailedEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectType" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="functionName" inType="win:UnicodeString"/>
+            <data name="failureMessage" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="alternateTenantId" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteRunQueryStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteRunQueryStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteRunReportStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteRunReportStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteGetPageStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteGetPageStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteRunXmlPortStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteRunXmlPortStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteInvokeCodeUnitStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteInvokeCodeUnitStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteInvokeFormApplicationMethodStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteInvokeFormApplicationMethodStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="objectId" inType="win:Int32"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSessionOpenedEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="connectionType" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSessionClosedEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="connectionType" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteCreateServiceSessionStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="connectionType" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteCreateServiceSessionStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="connectionType" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteEndServiceSessionStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="connectionType" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteEndServiceSessionStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="connectionType" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlExecuteScalarStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlExecuteScalarStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlExecuteNonQueryStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlExecuteNonQueryStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlExecuteReaderStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlExecuteReaderStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlReadNextResultStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlReadNextResultStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlReadNextRowStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlReadNextRowStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlBeginTransactionStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlBeginTransactionStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlPrepareStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlPrepareStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="sqlStatement" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlOpenConnectionStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlOpenConnectionStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlCommitStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlCommitStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlRollbackStartEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSqlRollbackStopEventArgs">
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:Int32"/>
+            <data name="userName" inType="win:UnicodeString"/>
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSubsystemErrorMessageEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSubsystemWarningMessageEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteSubsystemInfoMessageEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteNavServerInitializingEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteNavServerReadyEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteNavServerShuttingDownEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteApplicationMountedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteApplicationMountFailedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTenantConfigLoadedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTenantMountedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTenantMountFailedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTenantDismountedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteExceptionErrorMessageEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteExceptionWarningMessageEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteExceptionInfoMessageEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteODataConnectedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteODataConnectionClosedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteRtcConnectedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteRtcConnectionClosedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteWebServiceConnectedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteWebServiceConnectionClosedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteAdminServiceConnectedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteAdminServiceConnectionClosedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteNasStartingEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteNasCompletedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteNasFailedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteNasPermanentlyFailedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteALInfoMessageEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteAuthenticationSubsystemFailedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteAuthenticationSubsystemInfoMessageArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="LimitedUserOptionalTablePermissionErrorInfoMessageArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteScomFatalSqlErrorEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteScomSqlConnectionEstablishedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteCertificateMonitorPermanentlyFailedEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteCertificateReplacedInformationEventArgs">
+            <data name="serverInstanceName" inType="win:UnicodeString"/>
+            <data name="tenantId" inType="win:UnicodeString"/>
+            <data name="message" inType="win:UnicodeString"/>
+          </template>
+        </templates>
+      </provider>
+    </events>
+  </instrumentation>
+  <localization>
+    <resources culture="en-US">
+      <stringTable>
+        <string id="event_LimitedUserOptionalTablePermissionErrorInfoMessage" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteAdminServiceConnectedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteAdminServiceConnectionClosedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteALFunctionFailedEvent" value="Alternate tenant ID: %9%nServer instance: %8%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject type: %4%nObject ID: %5%nFunction name: %6%nFailure message: %7"/>
+        <string id="event_WriteALFunctionStartEvent" value="Alternate tenant ID: %8%nServer instance: %7%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject type: %4%nObject ID: %5%nFunction name: %6"/>
+        <string id="event_WriteALFunctionStatementEvent" value="Alternate tenant ID: %10%nServer instance: %9%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject type: %4%nObject ID: %5%nFunction name: %6%nLine number: %7%nStatement: %8"/>
+        <string id="event_WriteALFunctionStopEvent" value="Alternate tenant ID: %8%nServer instance: %7%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject type: %4%nObject ID: %5%nFunction name: %6"/>
+        <string id="event_WriteALInfoMessageEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteApplicationMountedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteApplicationMountFailedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteAuthenticationSubsystemFailedEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteAuthenticationSubsystemInfoMessage" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteCertificateCloseToExpirationWarningEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteCertificateExpiredErrorEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteCertificateMonitorPermanentlyFailedEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteCertificateNewInformationEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteCertificateReplacedInformationEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteCreateServiceSessionStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nConnection type: %4"/>
+        <string id="event_WriteCreateServiceSessionStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nConnection type: %4"/>
+        <string id="event_WriteEndServiceSessionStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nConnection type: %4"/>
+        <string id="event_WriteEndServiceSessionStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nConnection type: %4"/>
+        <string id="event_WriteExceptionErrorMessageEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteExceptionInfoMessageEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteExceptionWarningMessageEvent" value="Server instance: %1%nTenant ID: %2%n%3"/>
+        <string id="event_WriteGetPageStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteGetPageStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteInvokeCodeUnitStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteInvokeCodeUnitStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteInvokeFormApplicationMethodStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteInvokeFormApplicationMethodStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteNasCompletedEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteNasFailedEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteNasPermanentlyFailedEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteNasStartingEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteNavServerInitializingEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteNavServerReadyEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteNavServerShuttingDownEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteODataConnectedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteODataConnectionClosedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WritePermissionCheckStartEvent" value="Server instance: %1%nSession ID: %2%nObject Type: %3%nObject ID: %4%nPermissions: %5%nCalling Object Type: %6%nCalling Object ID: %7"/>
+        <string id="event_WritePermissionCheckSuccessfulEvent" value="Server instance: %1%nSession ID: %2%nObject Type: %3%nObject ID: %4%nPermissions: %5%nCalling Object Type: %6%nCalling Object ID: %7"/>
+        <string id="event_WritePermissionCheckUnsuccessfulEvent" value="Server instance: %1%nSession ID: %2%nObject Type: %3%nObject ID: %4%nPermissions: %5%nCalling Object Type: %6%nCalling Object ID: %7"/>
+        <string id="event_WritePermissionUncheckedEvent" value="Server instance: %1%nSession ID: %2%nObject Type: %3%nObject ID: %4%nPermissions: %5%nCalling Object Type: %6%nCalling Object ID: %7"/>
+        <string id="event_WriteRtcConnectedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteRtcConnectionClosedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteRunQueryStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteRunQueryStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteRunReportStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteRunReportStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteRunXmlPortStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteRunXmlPortStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nObject ID: %4"/>
+        <string id="event_WriteScomFatalSqlErrorEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteScomSqlConnectionEstablishedEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteSessionClosedEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nConnection type: %4"/>
+        <string id="event_WriteSessionOpenedEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nConnection type: %4"/>
+        <string id="event_WriteSqlBeginTransactionStartEvent" value="Server instance: %4%nTenant ID: %1%nSession ID: %2%nUser name: %3"/>
+        <string id="event_WriteSqlBeginTransactionStopEvent" value="Server instance: %4%nTenant ID: %1%nSession ID: %2%nUser name: %3"/>
+        <string id="event_WriteSqlCommitStartEvent" value="Server instance: %4%nTenant ID: %1%nSession ID: %2%nUser name: %3"/>
+        <string id="event_WriteSqlCommitStopEvent" value="Server instance: %4%nTenant ID: %1%nSession ID: %2%nUser name: %3"/>
+        <string id="event_WriteSqlExecuteNonQueryStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlExecuteNonQueryStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlExecuteReaderStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlExecuteReaderStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlExecuteScalarStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlExecuteScalarStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlOpenConnectionStartEvent" value="Server instance: %4%nTenant ID: %1%nSession ID: %2%nUser name: %3"/>
+        <string id="event_WriteSqlOpenConnectionStopEvent" value="Server instance: %4%nTenant ID: %1%nSession ID: %2%nUser name: %3"/>
+        <string id="event_WriteSqlPrepareStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlPrepareStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlReadNextResultStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlReadNextResultStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlReadNextRowStartEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlReadNextRowStopEvent" value="Server instance: %5%nTenant ID: %1%nSession ID: %2%nUser name: %3%nSql statement: %4"/>
+        <string id="event_WriteSqlRollbackStartEvent" value="Server instance: %4%nTenant ID: %1%nSession ID: %2%nUser name: %3"/>
+        <string id="event_WriteSqlRollbackStopEvent" value="Server instance: %4%nTenant ID: %1%nSession ID: %2%nUser name: %3"/>
+        <string id="event_WriteSubsystemErrorMessageEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteSubsystemInfoMessageEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteSubsystemWarningMessageEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteTenantConfigLoadedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteTenantDismountedEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteTenantMountedEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteTenantMountFailedEvent" value="Server instance: %1%nTenant: %2%n%3"/>
+        <string id="event_WriteWebServiceConnectedEvent" value="Server instance: %1%n%2"/>
+        <string id="event_WriteWebServiceConnectionClosedEvent" value="Server instance: %1%n%2"/>
+        <string id="keyword_ALFunctionCallTracing" value="ALFunctionCallTracing"/>
+        <string id="keyword_CrmTracing" value="CrmTracing"/>
+        <string id="keyword_EventViewer" value="EventViewer"/>
+        <string id="keyword_LicenseTelemetry" value="LicenseTelemetry"/>
+        <string id="keyword_ServiceCall" value="ServiceCall"/>
+        <string id="keyword_Session0" value="Session0"/>
+        <string id="keyword_Session1" value="Session1"/>
+        <string id="keyword_Session2" value="Session2"/>
+        <string id="keyword_Session3" value="Session3"/>
+        <string id="keyword_SqlTracing" value="SqlTracing"/>
+        <string id="keyword_TelemetryTracing" value="TelemetryTracing"/>
+        <string id="task_BeginTransaction" value="BeginTransaction"/>
+        <string id="task_CloseConnection" value="CloseConnection"/>
+        <string id="task_CloseSession" value="CloseSession"/>
+        <string id="task_Commit" value="Commit"/>
+        <string id="task_CreateServiceSession" value="CreateServiceSession"/>
+        <string id="task_CrmAssociate" value="CrmAssociate"/>
+        <string id="task_CrmCreate" value="CrmCreate"/>
+        <string id="task_CrmDelete" value="CrmDelete"/>
+        <string id="task_CrmDisassociate" value="CrmDisassociate"/>
+        <string id="task_CrmRetrieve" value="CrmRetrieve"/>
+        <string id="task_CrmRetrieveMultiple" value="CrmRetrieveMultiple"/>
+        <string id="task_CrmSetState" value="CrmSetState"/>
+        <string id="task_CrmUpdate" value="CrmUpdate"/>
+        <string id="task_EndServiceSession" value="EndServiceSession"/>
+        <string id="task_ExceptionThrown" value="ExceptionThrown"/>
+        <string id="task_ExecuteALFunction" value="ExecuteALFunction"/>
+        <string id="task_ExecuteNonQuery" value="ExecuteNonQuery"/>
+        <string id="task_ExecuteReader" value="ExecuteReader"/>
+        <string id="task_ExecuteScalar" value="ExecuteScalar"/>
+        <string id="task_GetPage" value="GetPage"/>
+        <string id="task_InvokeCodeUnit" value="InvokeCodeUnit"/>
+        <string id="task_InvokeFormApplicationMethod" value="InvokeFormApplicationMethod"/>
+        <string id="task_Message" value="Message"/>
+        <string id="task_OpenConnection" value="OpenConnection"/>
+        <string id="task_OpenSession" value="OpenSession"/>
+        <string id="task_Prepare" value="Prepare"/>
+        <string id="task_ReadNextResult" value="ReadNextResult"/>
+        <string id="task_ReadNextRow" value="ReadNextRow"/>
+        <string id="task_Rollback" value="Rollback"/>
+        <string id="task_RunQuery" value="RunQuery"/>
+        <string id="task_RunReport" value="RunReport"/>
+        <string id="task_RunXmlPort" value="RunXmlPort"/>
+        <string id="task_TelemetryData" value="TelemetryData"/>
+        <string id="task_WritePermissionCheckStartEvent" value="WritePermissionCheckStartEvent"/>
+        <string id="task_WritePermissionCheckSuccessfulEvent" value="WritePermissionCheckSuccessfulEvent"/>
+        <string id="task_WritePermissionCheckUnsuccessfulEvent" value="WritePermissionCheckUnsuccessfulEvent"/>
+        <string id="task_WritePermissionUncheckedEvent" value="WritePermissionUncheckedEvent"/>
+      </stringTable>
+    </resources>
+  </localization>
+</instrumentationManifest>

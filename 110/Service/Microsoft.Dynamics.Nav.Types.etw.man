@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instrumentationManifest xmlns="http://schemas.microsoft.com/win/2004/08/events">
+  <instrumentation xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:win="http://manifests.microsoft.com/win/2004/08/windows/events">
+    <events xmlns="http://schemas.microsoft.com/win/2004/08/events">
+      <provider name="Microsoft-DynamicsNAV-Server" guid="{85423fd1-c021-5a63-f214-c4819f8809f3}" symbol="MicrosoftDynamicsNAVServer" messageFileName="C:\Program Files\Microsoft Dynamics NAV\110\Service\Microsoft.Dynamics.Nav.Types.etw.dll" resourceFileName="C:\Program Files\Microsoft Dynamics NAV\110\Service\Microsoft.Dynamics.Nav.Types.etw.dll">
+        <channels>
+          <channel chid="Admin" name="Microsoft-DynamicsNAV-Server/Admin" value="16" type="Admin" enabled="true"/>
+          <channel chid="Debug" name="Microsoft-DynamicsNAV-Server/Debug" value="19" type="Debug" enabled="false">
+            <publishing>
+              <bufferSize>64</bufferSize>
+              <maxBuffers>64</maxBuffers>
+              <latency>1</latency>
+            </publishing>
+          </channel>
+          <channel chid="Operational" name="Microsoft-DynamicsNAV-Server/Operational" value="17" type="Operational" enabled="true"/>
+        </channels>
+        <tasks>
+          <task name="TelemetryData" message="$(string.task_TelemetryData)" value="33"/>
+        </tasks>
+        <opcodes></opcodes>
+        <keywords>
+          <keyword name="EventViewer" message="$(string.keyword_EventViewer)" mask="0x1"/>
+          <keyword name="TelemetryTracing" message="$(string.keyword_TelemetryTracing)" mask="0x20"/>
+          <keyword name="Session3" message="$(string.keyword_Session3)" mask="0x100000000000"/>
+          <keyword name="Session2" message="$(string.keyword_Session2)" mask="0x200000000000"/>
+          <keyword name="Session1" message="$(string.keyword_Session1)" mask="0x400000000000"/>
+          <keyword name="Session0" message="$(string.keyword_Session0)" mask="0x800000000000"/>
+        </keywords>
+        <events>
+          <event value="700" version="2" level="win:Critical" symbol="WriteTelemetryCriticalEvent" message="$(string.event_WriteTelemetryCriticalEvent)" keywords="EventViewer" task="TelemetryData" channel="Admin" template="WriteTelemetryCriticalEventArgs"/>
+          <event value="701" version="2" level="win:Error" symbol="WriteTelemetryErrorEvent" message="$(string.event_WriteTelemetryErrorEvent)" keywords="EventViewer" task="TelemetryData" channel="Admin" template="WriteTelemetryErrorEventArgs"/>
+          <event value="702" version="2" level="win:Informational" symbol="WriteTelemetryInformationalEvent" message="$(string.event_WriteTelemetryInformationalEvent)" keywords="TelemetryTracing" task="TelemetryData" channel="Debug" template="WriteTelemetryInformationalEventArgs"/>
+          <event value="704" version="2" level="win:Verbose" symbol="WriteTelemetryVerboseEvent" message="$(string.event_WriteTelemetryVerboseEvent)" keywords="TelemetryTracing" task="TelemetryData" channel="Debug" template="WriteTelemetryVerboseEventArgs"/>
+          <event value="705" version="2" level="win:Warning" symbol="WriteTelemetryWarningEvent" message="$(string.event_WriteTelemetryWarningEvent)" keywords="EventViewer" task="TelemetryData" channel="Admin" template="WriteTelemetryWarningEventArgs"/>
+          <event value="706" version="1" level="win:Verbose" symbol="WriteTelemetryActivityTransferEvent" message="$(string.event_WriteTelemetryActivityTransferEvent)" keywords="TelemetryTracing" task="TelemetryData" channel="Operational" template="WriteTelemetryActivityTransferEventArgs"/>
+        </events>
+        <templates>
+          <template tid="WriteTelemetryCriticalEventArgs">
+            <data name="instanceName" inType="win:UnicodeString"/>
+            <data name="category" inType="win:UnicodeString"/>
+            <data name="clientSessionId" inType="win:GUID"/>
+            <data name="clientActivityId" inType="win:GUID"/>
+            <data name="serverSessionId" inType="win:GUID"/>
+            <data name="serverActivityId" inType="win:GUID"/>
+            <data name="eventTime" inType="win:FILETIME"/>
+            <data name="message" inType="win:UnicodeString"/>
+            <data name="processId" inType="win:Int32"/>
+            <data name="tag" inType="win:UnicodeString"/>
+            <data name="threadId" inType="win:Int32"/>
+            <data name="counterInformation" inType="win:UnicodeString"/>
+            <data name="alternateTenantIds" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTelemetryErrorEventArgs">
+            <data name="instanceName" inType="win:UnicodeString"/>
+            <data name="category" inType="win:UnicodeString"/>
+            <data name="clientSessionId" inType="win:GUID"/>
+            <data name="clientActivityId" inType="win:GUID"/>
+            <data name="serverSessionId" inType="win:GUID"/>
+            <data name="serverActivityId" inType="win:GUID"/>
+            <data name="eventTime" inType="win:FILETIME"/>
+            <data name="message" inType="win:UnicodeString"/>
+            <data name="processId" inType="win:Int32"/>
+            <data name="tag" inType="win:UnicodeString"/>
+            <data name="threadId" inType="win:Int32"/>
+            <data name="counterInformation" inType="win:UnicodeString"/>
+            <data name="alternateTenantIds" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTelemetryWarningEventArgs">
+            <data name="instanceName" inType="win:UnicodeString"/>
+            <data name="category" inType="win:UnicodeString"/>
+            <data name="clientSessionId" inType="win:GUID"/>
+            <data name="clientActivityId" inType="win:GUID"/>
+            <data name="serverSessionId" inType="win:GUID"/>
+            <data name="serverActivityId" inType="win:GUID"/>
+            <data name="eventTime" inType="win:FILETIME"/>
+            <data name="message" inType="win:UnicodeString"/>
+            <data name="processId" inType="win:Int32"/>
+            <data name="tag" inType="win:UnicodeString"/>
+            <data name="threadId" inType="win:Int32"/>
+            <data name="counterInformation" inType="win:UnicodeString"/>
+            <data name="alternateTenantIds" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTelemetryInformationalEventArgs">
+            <data name="instanceName" inType="win:UnicodeString"/>
+            <data name="category" inType="win:UnicodeString"/>
+            <data name="clientSessionId" inType="win:GUID"/>
+            <data name="clientActivityId" inType="win:GUID"/>
+            <data name="serverSessionId" inType="win:GUID"/>
+            <data name="serverActivityId" inType="win:GUID"/>
+            <data name="eventTime" inType="win:FILETIME"/>
+            <data name="message" inType="win:UnicodeString"/>
+            <data name="processId" inType="win:Int32"/>
+            <data name="tag" inType="win:UnicodeString"/>
+            <data name="threadId" inType="win:Int32"/>
+            <data name="counterInformation" inType="win:UnicodeString"/>
+            <data name="alternateTenantIds" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTelemetryVerboseEventArgs">
+            <data name="instanceName" inType="win:UnicodeString"/>
+            <data name="category" inType="win:UnicodeString"/>
+            <data name="clientSessionId" inType="win:GUID"/>
+            <data name="clientActivityId" inType="win:GUID"/>
+            <data name="serverSessionId" inType="win:GUID"/>
+            <data name="serverActivityId" inType="win:GUID"/>
+            <data name="eventTime" inType="win:FILETIME"/>
+            <data name="message" inType="win:UnicodeString"/>
+            <data name="processId" inType="win:Int32"/>
+            <data name="tag" inType="win:UnicodeString"/>
+            <data name="threadId" inType="win:Int32"/>
+            <data name="counterInformation" inType="win:UnicodeString"/>
+            <data name="alternateTenantIds" inType="win:UnicodeString"/>
+          </template>
+          <template tid="WriteTelemetryActivityTransferEventArgs">
+            <data name="instanceName" inType="win:UnicodeString"/>
+            <data name="category" inType="win:UnicodeString"/>
+            <data name="sessionId" inType="win:GUID"/>
+            <data name="oldActivityId" inType="win:GUID"/>
+            <data name="newActivityId" inType="win:GUID"/>
+            <data name="eventTime" inType="win:FILETIME"/>
+            <data name="processId" inType="win:Int32"/>
+            <data name="tag" inType="win:UnicodeString"/>
+            <data name="threadId" inType="win:Int32"/>
+          </template>
+        </templates>
+      </provider>
+    </events>
+  </instrumentation>
+  <localization>
+    <resources culture="en-US">
+      <stringTable>
+        <string id="event_WriteTelemetryActivityTransferEvent" value="Server instance: %1%nCategory: %2%nSessionId: %3%nOld activity: %4%nNew activity: %5%nEventTime: %6%nProcessId: %7%nTag: %8%nThreadId: %9%nTransferring activity from %4 to %5"/>
+        <string id="event_WriteTelemetryCriticalEvent" value="Server instance: %1%nCategory: %2%nClientSessionId: %3%nClientActivityId: %4%nServerSessionUniqueId: %5%nServerActivityId: %6%nEventTime: %7%nMessage %8%nProcessId: %9%nTag: %10%nThreadId: %11%nCounterInformation: %12"/>
+        <string id="event_WriteTelemetryErrorEvent" value="Server instance: %1%nCategory: %2%nClientSessionId: %3%nClientActivityId: %4%nServerSessionUniqueId: %5%nServerActivityId: %6%nEventTime: %7%nMessage %8%nProcessId: %9%nTag: %10%nThreadId: %11%nCounterInformation: %12"/>
+        <string id="event_WriteTelemetryInformationalEvent" value="Server instance: %1%nCategory: %2%nClientSessionId: %3%nClientActivityId: %4%nServerSessionUniqueId: %5%nServerActivityId: %6%nEventTime: %7%nMessage %8%nProcessId: %9%nTag: %10%nThreadId: %11%nCounterInformation: %12"/>
+        <string id="event_WriteTelemetryVerboseEvent" value="Server instance: %1%nCategory: %2%nClientSessionId: %3%nClientActivityId: %4%nServerSessionUniqueId: %5%nServerActivityId: %6%nEventTime: %7%nMessage %8%nProcessId: %9%nTag: %10%nThreadId: %11%nCounterInformation: %12"/>
+        <string id="event_WriteTelemetryWarningEvent" value="Server instance: %1%nCategory: %2%nClientSessionId: %3%nClientActivityId: %4%nServerSessionUniqueId: %5%nServerActivityId: %6%nEventTime: %7%nMessage %8%nProcessId: %9%nTag: %10%nThreadId: %11%nCounterInformation: %12"/>
+        <string id="keyword_EventViewer" value="EventViewer"/>
+        <string id="keyword_Session0" value="Session0"/>
+        <string id="keyword_Session1" value="Session1"/>
+        <string id="keyword_Session2" value="Session2"/>
+        <string id="keyword_Session3" value="Session3"/>
+        <string id="keyword_TelemetryTracing" value="TelemetryTracing"/>
+        <string id="task_TelemetryData" value="TelemetryData"/>
+      </stringTable>
+    </resources>
+  </localization>
+</instrumentationManifest>
